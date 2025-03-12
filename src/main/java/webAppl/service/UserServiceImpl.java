@@ -3,17 +3,20 @@ package webAppl.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import webAppl.DAO.UserDAO;
-import webAppl.Entity.User;
+import webAppl.dao.UserDAO;
+import webAppl.entity.User;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
     private UserDAO userDAO;
 
+    @Autowired
+    public UserServiceImpl(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     @Transactional
     @Override
@@ -21,7 +24,6 @@ public class UserServiceImpl implements UserService {
         userDAO.add(user);
     }
 
-    @Transactional
     @Override
     public List<User> listUsers() {
         return userDAO.listUsers();
@@ -39,7 +41,6 @@ public class UserServiceImpl implements UserService {
         userDAO.updateUser(userUp);
     }
 
-    @Transactional
     @Override
     public User getUserById(long id) {
         return userDAO.getUserById(id);

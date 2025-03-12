@@ -1,4 +1,4 @@
-package webAppl.DAO;
+package webAppl.dao;
 
 
 import jakarta.persistence.EntityManager;
@@ -7,7 +7,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
-import webAppl.Entity.User;
+import webAppl.entity.User;
 
 import java.util.List;
 

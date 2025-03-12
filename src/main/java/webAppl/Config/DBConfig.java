@@ -1,4 +1,4 @@
-package webAppl.Config;
+package webAppl.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import webAppl.Entity.User;
+import webAppl.entity.User;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -47,7 +47,7 @@ public class DBConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(getDataSource());
-        factoryBean.setPackagesToScan("webAppl.Entity");
+        factoryBean.setPackagesToScan("webAppl.entity");
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         // Настройки Hibernate
         Properties props = new Properties();

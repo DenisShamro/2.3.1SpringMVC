@@ -1,6 +1,6 @@
 package webAppl.service;
 
-import webAppl.Entity.User;
+import webAppl.entity.User;
 
 import java.util.List;
 

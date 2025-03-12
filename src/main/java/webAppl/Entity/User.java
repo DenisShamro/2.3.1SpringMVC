@@ -1,4 +1,4 @@
-package webAppl.Entity;
+package webAppl.entity;
 
 import jakarta.persistence.*;
 

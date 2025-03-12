@@ -1,6 +1,6 @@
-package webAppl.DAO;
+package webAppl.dao;
 
-import webAppl.Entity.User;
+import webAppl.entity.User;
 
 import java.util.List;
 

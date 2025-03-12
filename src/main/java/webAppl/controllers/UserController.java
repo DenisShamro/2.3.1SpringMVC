@@ -1,4 +1,4 @@
-package webAppl.Controller;
+package webAppl.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,14 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import webAppl.Entity.User;
+import webAppl.entity.User;
 import webAppl.service.UserService;
 
 @Controller
-public class FirstController {
+public class UserController {
+
+    private UserService userService;
 
     @Autowired
-    private UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/")
     public String index(Model model) {
@@ -35,7 +39,7 @@ public class FirstController {
     }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam("userId")long id, Model model) {
+    public String delete(@RequestParam("userId")long id) {
         userService.deleteUserById(id);
         return "redirect:/";
     }

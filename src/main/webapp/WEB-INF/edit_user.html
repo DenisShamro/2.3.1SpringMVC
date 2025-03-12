@@ -9,7 +9,7 @@
 
 <form action="/update" method="post" >
 
-
+  <input type="hidden" name="id" th:value="${user.id}" />
 
   <label for="name">Имя:</label>
   <input type="text" id="name" name="name" th:value="${user.name}" required><br>
